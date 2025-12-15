@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程管理系統</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-page="courses" class="page-courses">
+    <!-- 頂部導航欄 -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <div class="logo">📚</div>
+            <h1 class="system-name">課程管理系統</h1>
+        </div>
+        <nav class="nav-center">
+            <a href="#" class="nav-link">選課</a>
+            <a href="index.html" class="nav-link active">課程</a>
+            <a href="grades.html" class="nav-link">成績</a>
+            <a href="calendar.html" class="nav-link">行事曆</a>
+        </nav>
+        <div class="nav-right">
+            <div class="user-info">
+                <span class="user-name">王小明</span>
+                <span class="notification-icon">🔔</span>
+            </div>
+            <button class="logout-btn">登出</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 側邊欄 -->
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar">👤</div>
+                <h3 class="username">王小明</h3>
+                <p class="user-role">學號: 1101234567</p>
+            </div>
+
+            <nav class="main-menu">
+                <h4 class="menu-title">我的課程</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">🏠</span>
+                    <span>首頁</span>
+                </a>
+                <a href="#" class="menu-item active">
+                    <span class="menu-icon">📚</span>
+                    <span>我的課程</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📢</span>
+                    <span>公告</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">我的課表</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📋</span>
+                    <span>備審</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">✅</span>
+                    <span>互動教材</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👤</span>
+                    <span>個人題庫</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📊</span>
+                    <span>Rubrics</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">校外競賽</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>個人/認證</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主內容區 -->
+        <main class="content-area">
+            <!-- 搜尋與篩選區 -->
+            <section class="search-filter">
+                <div class="search-box-container">
+                    <input type="text" id="searchInput" class="search-box" placeholder="搜尋: 最近課程">
+                    <button class="search-btn">搜尋</button>
+                </div>
+
+                <div class="filter-grid">
+                    <select class="filter-select" id="yearFilter">
+                        <option value="">學年: 全部</option>
+                        <option value="113">113學年</option>
+                        <option value="114">114學年</option>
+                        <option value="115">115學年</option>
+                    </select>
+
+                    <select class="filter-select" id="semesterFilter">
+                        <option value="">學期: 全部</option>
+                        <option value="1">第一學期</option>
+                        <option value="2">第二學期</option>
+                    </select>
+
+                    <select class="filter-select" id="typeFilter">
+                        <option value="">課程性質: 通行中</option>
+                        <option value="required">必修</option>
+                        <option value="elective">選修</option>
+                        <option value="general">通識</option>
+                    </select>
+
+                    <select class="filter-select" id="departmentFilter">
+                        <option value="">開課單位: 全部</option>
+                        <option value="cs">資訊工程系</option>
+                        <option value="ee">電機工程系</option>
+                        <option value="math">數學系</option>
+                        <option value="physics">物理系</option>
+                    </select>
+
+                    <select class="filter-select" id="gradeFilter">
+                        <option value="">年級: 全部</option>
+                        <option value="1">一年級</option>
+                        <option value="2">二年級</option>
+                        <option value="3">三年級</option>
+                        <option value="4">四年級</option>
+                    </select>
+
+                    <select class="filter-select" id="progressFilter">
+                        <option value="">進度: 全部</option>
+                        <option value="ongoing">進行中</option>
+                        <option value="completed">已完成</option>
+                        <option value="upcoming">即將開始</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- 課程卡片列表 -->
+            <section class="course-list" id="courseList">
+                <!-- 課程卡片將由 JavaScript 動態生成 -->
+            </section>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

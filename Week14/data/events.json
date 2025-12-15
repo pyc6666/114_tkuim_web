@@ -1,0 +1,118 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "資料結構期中考",
+            "course": "資料結構與演算法",
+            "type": "exam",
+            "date": "2025-12-18",
+            "time": "09:00-11:00",
+            "location": "資訊館 101",
+            "description": "範圍：第 1-6 章，包含樹、圖、排序演算法"
+        },
+        {
+            "id": 2,
+            "title": "作業系統作業 #3",
+            "course": "作業系統",
+            "type": "assignment",
+            "date": "2025-12-20",
+            "time": "23:59",
+            "description": "實作 Process Scheduling 演算法"
+        },
+        {
+            "id": 3,
+            "title": "資料庫專題報告",
+            "course": "資料庫系統",
+            "type": "assignment",
+            "date": "2025-12-22",
+            "time": "23:59",
+            "description": "設計並實作一個完整的資料庫系統"
+        },
+        {
+            "id": 4,
+            "title": "AI 期末專題提案",
+            "course": "人工智慧導論",
+            "type": "deadline",
+            "date": "2025-12-25",
+            "time": "17:00",
+            "description": "提交期末專題提案書"
+        },
+        {
+            "id": 5,
+            "title": "演算法分析小考",
+            "course": "演算法分析",
+            "type": "exam",
+            "date": "2025-12-27",
+            "time": "10:00-11:00",
+            "location": "資訊館 205",
+            "description": "範圍：Dynamic Programming"
+        },
+        {
+            "id": 6,
+            "title": "機器學習作業 #4",
+            "course": "機器學習",
+            "type": "assignment",
+            "date": "2025-12-28",
+            "time": "23:59",
+            "description": "實作 Neural Network"
+        },
+        {
+            "id": 7,
+            "title": "軟體工程期末報告",
+            "course": "軟體工程",
+            "type": "assignment",
+            "date": "2025-12-30",
+            "time": "23:59",
+            "description": "團隊專題最終報告"
+        },
+        {
+            "id": 8,
+            "title": "計算機組織實驗",
+            "course": "計算機組織",
+            "type": "class",
+            "date": "2025-12-16",
+            "time": "14:00-17:00",
+            "location": "實驗室 A",
+            "description": "CPU 設計實驗"
+        },
+        {
+            "id": 9,
+            "title": "資料結構作業 #5",
+            "course": "資料結構與演算法",
+            "type": "assignment",
+            "date": "2025-12-19",
+            "time": "23:59",
+            "description": "實作 Graph Algorithms"
+        },
+        {
+            "id": 10,
+            "title": "網路程式設計期末考",
+            "course": "網路程式設計",
+            "type": "exam",
+            "date": "2026-01-03",
+            "time": "13:00-15:00",
+            "location": "資訊館 301",
+            "description": "範圍：全學期內容"
+        },
+        {
+            "id": 11,
+            "title": "資料庫系統期末考",
+            "course": "資料庫系統",
+            "type": "exam",
+            "date": "2026-01-05",
+            "time": "09:00-11:00",
+            "location": "資訊館 201",
+            "description": "範圍：SQL、Transaction、Normalization"
+        },
+        {
+            "id": 12,
+            "title": "AI 專題展示",
+            "course": "人工智慧導論",
+            "type": "other",
+            "date": "2026-01-08",
+            "time": "14:00-17:00",
+            "location": "國際會議廳",
+            "description": "期末專題成果展示"
+        }
+    ]
+}

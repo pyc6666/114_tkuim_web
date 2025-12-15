@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行事曆 - 課程管理系統</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-page="calendar" class="page-calendar">
+    <!-- 頂部導航欄 -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <div class="logo">📚</div>
+            <h1 class="system-name">課程管理系統</h1>
+        </div>
+        <nav class="nav-center">
+            <a href="#" class="nav-link">選課</a>
+            <a href="index.html" class="nav-link">課程</a>
+            <a href="grades.html" class="nav-link">成績</a>
+            <a href="calendar.html" class="nav-link active">行事曆</a>
+        </nav>
+        <div class="nav-right">
+            <div class="user-info">
+                <span class="user-name">王小明</span>
+                <span class="notification-icon">🔔</span>
+            </div>
+            <button class="logout-btn">登出</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 側邊欄 -->
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar">👤</div>
+                <h3 class="username">王小明</h3>
+                <p class="user-role">學號: 1101234567</p>
+            </div>
+
+            <nav class="main-menu">
+                <h4 class="menu-title">我的課程</h4>
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">🏠</span>
+                    <span>首頁</span>
+                </a>
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">📚</span>
+                    <span>我的課程</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📢</span>
+                    <span>公告</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">我的課表</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📋</span>
+                    <span>備審</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">✅</span>
+                    <span>互動教材</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👤</span>
+                    <span>個人題庫</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📊</span>
+                    <span>Rubrics</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">校外競賽</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>個人/認證</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主內容區 -->
+        <main class="content-area">
+            <div class="calendar-header">
+                <h2 class="page-title">📅 行事曆</h2>
+                <div class="calendar-controls">
+                    <button class="control-btn" id="prevMonth">◀</button>
+                    <h3 class="current-month" id="currentMonth">2025 年 12 月</h3>
+                    <button class="control-btn" id="nextMonth">▶</button>
+                    <button class="today-btn" id="todayBtn">今天</button>
+                </div>
+            </div>
+
+            <!-- 快速統計 -->
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">📝</span>
+                    <div class="stat-content">
+                        <p class="stat-number">8</p>
+                        <p class="stat-label">本月作業</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📖</span>
+                    <div class="stat-content">
+                        <p class="stat-number">3</p>
+                        <p class="stat-label">本月考試</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-content">
+                        <p class="stat-number">5</p>
+                        <p class="stat-label">待辦事項</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <p class="stat-number">12</p>
+                        <p class="stat-label">已完成</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 視圖切換 -->
+            <div class="view-tabs">
+                <button class="tab-btn active" data-view="month">月檢視</button>
+                <button class="tab-btn" data-view="week">週檢視</button>
+                <button class="tab-btn" data-view="list">列表檢視</button>
+            </div>
+
+            <!-- 月曆主體 -->
+            <div class="calendar-container" id="calendarView">
+                <div class="calendar-grid">
+                    <div class="weekday-header">日</div>
+                    <div class="weekday-header">一</div>
+                    <div class="weekday-header">二</div>
+                    <div class="weekday-header">三</div>
+                    <div class="weekday-header">四</div>
+                    <div class="weekday-header">五</div>
+                    <div class="weekday-header">六</div>
+                    <!-- 日期格子將由 JavaScript 動態生成 -->
+                </div>
+            </div>
+
+            <!-- 列表檢視 -->
+            <div class="list-view" id="listView" style="display: none;">
+                <div class="events-list" id="eventsList">
+                    <!-- 事件列表將由 JavaScript 動態生成 -->
+                </div>
+            </div>
+
+            <!-- 即將到來的事件 -->
+            <section class="upcoming-section">
+                <h3 class="section-title">📌 即將到來</h3>
+                <div class="upcoming-events" id="upcomingEvents">
+                    <!-- 即將到來的事件將由 JavaScript 動態生成 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 事件詳情彈窗 -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3 class="modal-title" id="modalTitle">事件詳情</h3>
+            <div class="modal-body" id="modalBody">
+                <!-- 事件詳情將由 JavaScript 動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

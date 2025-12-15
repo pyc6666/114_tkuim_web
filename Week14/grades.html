@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成績查詢 - 課程管理系統</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-page="grades" class="page-grades">
+    <!-- 頂部導航欄 -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <div class="logo">📚</div>
+            <h1 class="system-name">課程管理系統</h1>
+        </div>
+        <nav class="nav-center">
+            <a href="#" class="nav-link">選課</a>
+            <a href="index.html" class="nav-link">課程</a>
+            <a href="grades.html" class="nav-link active">成績</a>
+            <a href="calendar.html" class="nav-link">行事曆</a>
+        </nav>
+        <div class="nav-right">
+            <div class="user-info">
+                <span class="user-name">王小明</span>
+                <span class="notification-icon">🔔</span>
+            </div>
+            <button class="logout-btn">登出</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 側邊欄 -->
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar">👤</div>
+                <h3 class="username">王小明</h3>
+                <p class="user-role">學號: 1101234567</p>
+            </div>
+
+            <nav class="main-menu">
+                <h4 class="menu-title">我的課程</h4>
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">🏠</span>
+                    <span>首頁</span>
+                </a>
+                <a href="index.html" class="menu-item">
+                    <span class="menu-icon">📚</span>
+                    <span>我的課程</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📢</span>
+                    <span>公告</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">我的課表</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📋</span>
+                    <span>備審</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">✅</span>
+                    <span>互動教材</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👤</span>
+                    <span>個人題庫</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">📊</span>
+                    <span>Rubrics</span>
+                </a>
+            </nav>
+
+            <nav class="sub-menu">
+                <h4 class="menu-title">校外競賽</h4>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span>個人/認證</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主內容區 -->
+        <main class="content-area">
+            <div class="grades-header">
+                <h2 class="page-title">📊 成績查詢</h2>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <p class="stat-label">總平均 GPA</p>
+                            <p class="stat-value">3.85</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <p class="stat-label">已修學分</p>
+                            <p class="stat-value">68</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <p class="stat-label">班級排名</p>
+                            <p class="stat-value">5/120</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <p class="stat-label">優等課程</p>
+                            <p class="stat-value">12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 篩選區 -->
+            <section class="filter-section">
+                <div class="filter-row">
+                    <select class="filter-select" id="yearFilter">
+                        <option value="">學年: 全部</option>
+                        <option value="113">113學年</option>
+                        <option value="114" selected>114學年</option>
+                        <option value="115">115學年</option>
+                    </select>
+
+                    <select class="filter-select" id="semesterFilter">
+                        <option value="">學期: 全部</option>
+                        <option value="1" selected>第一學期</option>
+                        <option value="2">第二學期</option>
+                    </select>
+
+                    <select class="filter-select" id="typeFilter">
+                        <option value="">課程性質: 全部</option>
+                        <option value="required">必修</option>
+                        <option value="elective">選修</option>
+                        <option value="general">通識</option>
+                    </select>
+
+                    <button class="export-btn">📥 匯出成績單</button>
+                </div>
+            </section>
+
+            <!-- 成績表格 -->
+            <section class="grades-table-section">
+                <div class="semester-group" id="gradesContainer">
+                    <!-- 成績資料將由 JavaScript 動態生成 -->
+                </div>
+            </section>
+
+            <!-- 成績分析圖表 -->
+            <section class="analysis-section">
+                <h3 class="section-title">📈 成績分析</h3>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h4 class="chart-title">成績分布</h4>
+                        <div class="grade-distribution">
+                            <div class="grade-bar">
+                                <span class="grade-label">A+ (90-100)</span>
+                                <div class="bar-container">
+                                    <div class="bar"
+                                        style="width: 40%; background: linear-gradient(90deg, #4caf50, #66bb6a);"></div>
+                                    <span class="bar-value">6 門</span>
+                                </div>
+                            </div>
+                            <div class="grade-bar">
+                                <span class="grade-label">A (85-89)</span>
+                                <div class="bar-container">
+                                    <div class="bar"
+                                        style="width: 33%; background: linear-gradient(90deg, #8bc34a, #9ccc65);"></div>
+                                    <span class="bar-value">5 門</span>
+                                </div>
+                            </div>
+                            <div class="grade-bar">
+                                <span class="grade-label">B+ (80-84)</span>
+                                <div class="bar-container">
+                                    <div class="bar"
+                                        style="width: 20%; background: linear-gradient(90deg, #ffc107, #ffca28);"></div>
+                                    <span class="bar-value">3 門</span>
+                                </div>
+                            </div>
+                            <div class="grade-bar">
+                                <span class="grade-label">B (75-79)</span>
+                                <div class="bar-container">
+                                    <div class="bar"
+                                        style="width: 7%; background: linear-gradient(90deg, #ff9800, #ffa726);"></div>
+                                    <span class="bar-value">1 門</span>
+                                </div>
+                            </div>
+                            <div class="grade-bar">
+                                <span class="grade-label">C+ (70-74)</span>
+                                <div class="bar-container">
+                                    <div class="bar"
+                                        style="width: 0%; background: linear-gradient(90deg, #f44336, #ef5350);"></div>
+                                    <span class="bar-value">0 門</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h4 class="chart-title">學期 GPA 趨勢</h4>
+                        <div class="gpa-trend">
+                            <div class="trend-item">
+                                <span class="trend-semester">113-1</span>
+                                <div class="trend-bar-container">
+                                    <div class="trend-bar"
+                                        style="height: 85%; background: linear-gradient(180deg, #00bcd4, #0097a7);">
+                                    </div>
+                                </div>
+                                <span class="trend-value">3.7</span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-semester">113-2</span>
+                                <div class="trend-bar-container">
+                                    <div class="trend-bar"
+                                        style="height: 90%; background: linear-gradient(180deg, #00bcd4, #0097a7);">
+                                    </div>
+                                </div>
+                                <span class="trend-value">3.8</span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-semester">114-1</span>
+                                <div class="trend-bar-container">
+                                    <div class="trend-bar"
+                                        style="height: 95%; background: linear-gradient(180deg, #4caf50, #388e3c);">
+                                    </div>
+                                </div>
+                                <span class="trend-value">3.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
